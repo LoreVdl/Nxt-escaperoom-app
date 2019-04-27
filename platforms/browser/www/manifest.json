@@ -1,0 +1,11 @@
+{
+  "background_color": "#FFF",
+  "display": "standalone",
+  "name": "MyApp",
+  "short_name": "MyApp",
+  "version": "nxt.escape",
+  "description": "An awesome Ionic/Cordova app.",
+  "author": "Ionic Framework Team",
+  "icons": [],
+  "start_url": "index.html"
+}
