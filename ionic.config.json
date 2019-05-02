@@ -1,5 +1,7 @@
 {
   "name": "NxT-escape",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }
