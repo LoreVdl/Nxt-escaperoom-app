@@ -11,7 +11,10 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { AngularFireModule } from '@angular/fire';
 import { environment } from '../environments/environment';
-import { AngularFirestoreModule, FirestoreSettingsToken } from '@angular/fire/firestore'
+import { AngularFirestoreModule, FirestoreSettingsToken } from '@angular/fire/firestore'; 
+import { SharedModule } from './shared/shared.module';
+import { NxtEscapeModule } from './nxt-escape/nxt-escape.module';
+import { CountdownService } from './services/countdown.service';
 
 @NgModule({
   declarations: [
@@ -23,11 +26,14 @@ import { AngularFirestoreModule, FirestoreSettingsToken } from '@angular/fire/fi
     IonicModule.forRoot(), 
     AppRoutingModule, 
     AngularFireModule.initializeApp(environment.firebase),
-    AngularFirestoreModule, 
+    AngularFirestoreModule,
+    SharedModule, 
+    NxtEscapeModule, 
   ],
   providers: [
     StatusBar,
     SplashScreen,
+    CountdownService,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }, 
     { provide: FirestoreSettingsToken, useValue: {} }
   ],

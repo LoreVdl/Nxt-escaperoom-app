@@ -1,11 +1,3 @@
-<ion-header>
-    <ion-toolbar>
-        <ion-item>
-            {{ time }}
-        </ion-item>
-    </ion-toolbar>
-</ion-header>
+<button (click) = "startTimer()">Start</button>
 
-<ion-content>
-    <button (click) = "startGame()"><ion-icon name="ios-play" size = "large"></ion-icon></button>
-</ion-content>
+<a [routerLink]="['/test']">Next</a>

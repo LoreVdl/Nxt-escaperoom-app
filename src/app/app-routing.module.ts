@@ -1,9 +1,11 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { StartPageComponent } from './nxt-escape/start-page/start-page.component';
+import { TestPageComponent } from './nxt-escape/test-page/test-page.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'nxt-escape', pathMatch: 'full' },
-  { path: 'nxt-escape', loadChildren: './nxt-escape/nxt-escape.module#NxtEscapeModule' },
+  { path: '', component: StartPageComponent },
+  { path: 'test', component: TestPageComponent },
 ];
 
 @NgModule({

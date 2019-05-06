@@ -1,21 +1,23 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Routes, RouterModule } from '@angular/router';
+import { Routes, RouterModule, Router } from '@angular/router';
 import { StartPageComponent } from './start-page/start-page.component';
 import { IonicModule } from '@ionic/angular';
-
-const routes: Routes = [
-  { path: '', component: StartPageComponent },
-];
+import { TestPageComponent } from './test-page/test-page.component';
 
 @NgModule({
   declarations: [
-    StartPageComponent
+    StartPageComponent, 
+    TestPageComponent
   ],
   imports: [
     CommonModule, 
-    RouterModule.forChild(routes), 
-    IonicModule
+    IonicModule, 
+    RouterModule
+  ], 
+  exports: [
+    StartPageComponent, 
+    TestPageComponent
   ]
 })
 export class NxtEscapeModule { }
