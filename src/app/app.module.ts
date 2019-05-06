@@ -13,12 +13,15 @@ import { AngularFireModule } from '@angular/fire';
 import { environment } from '../environments/environment';
 import { AngularFirestoreModule, FirestoreSettingsToken } from '@angular/fire/firestore'; 
 import { SharedModule } from './shared/shared.module';
-import { NxtEscapeModule } from './nxt-escape/nxt-escape.module';
 import { CountdownService } from './services/countdown.service';
+import { StartPageComponent } from './start-page/start-page.component';
+import { TestPageComponent } from './test-page/test-page.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent, 
+    StartPageComponent, 
+    TestPageComponent
   ],
   entryComponents: [],
   imports: [
@@ -27,8 +30,7 @@ import { CountdownService } from './services/countdown.service';
     AppRoutingModule, 
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
-    SharedModule, 
-    NxtEscapeModule, 
+    SharedModule,  
   ],
   providers: [
     StatusBar,
