@@ -1,0 +1,30 @@
+<p *ngIf = "errorMessage">{{ errorMessage }}</p>
+<form *ngIf = "form"[formGroup] = "form" (ngSubmit) = "verifyCode()">
+  <ion-list>
+    <ion-item>
+      <ion-input type = "number" formControlName = "code_number_1"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input type = "number" formControlName = "code_number_2"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input type = "number" formControlName = "code_number_3"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input type = "number" formControlName = "code_number_4"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input type = "number" formControlName = "code_number_5"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input type = "number" formControlName = "code_number_6"></ion-input>
+    </ion-item>
+
+    <ion-button (click) = "verifyCode()"></ion-button>
+  </ion-list>
+</form>

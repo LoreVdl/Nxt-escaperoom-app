@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { StartPageComponent } from './start-page/start-page.component';
-import { TestPageComponent } from './test-page/test-page.component';
+import { CodeScreenOneComponent } from './code-screen-one/code-screen-one.component';
 
 const routes: Routes = [
   { path: '', component: StartPageComponent },
-  { path: 'test', component: TestPageComponent },
+  { path: 'code-1', component: CodeScreenOneComponent },
 ];
 
 @NgModule({

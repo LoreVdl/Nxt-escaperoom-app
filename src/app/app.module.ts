@@ -15,13 +15,14 @@ import { AngularFirestoreModule, FirestoreSettingsToken } from '@angular/fire/fi
 import { SharedModule } from './shared/shared.module';
 import { CountdownService } from './services/countdown.service';
 import { StartPageComponent } from './start-page/start-page.component';
-import { TestPageComponent } from './test-page/test-page.component';
+import { CodeScreenOneComponent } from './code-screen-one/code-screen-one.component';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent, 
     StartPageComponent, 
-    TestPageComponent
+    CodeScreenOneComponent
   ],
   entryComponents: [],
   imports: [
@@ -31,6 +32,8 @@ import { TestPageComponent } from './test-page/test-page.component';
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
     SharedModule,  
+    ReactiveFormsModule, 
+    FormsModule
   ],
   providers: [
     StatusBar,
