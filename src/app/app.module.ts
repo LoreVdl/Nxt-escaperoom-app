@@ -17,12 +17,14 @@ import { CountdownService } from './services/countdown.service';
 import { StartPageComponent } from './start-page/start-page.component';
 import { CodeScreenOneComponent } from './code-screen-one/code-screen-one.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { WordsPageComponent } from './words-page/words-page.component';
 
 @NgModule({
   declarations: [
     AppComponent, 
     StartPageComponent, 
-    CodeScreenOneComponent
+    CodeScreenOneComponent, 
+    WordsPageComponent
   ],
   entryComponents: [],
   imports: [
