@@ -7,13 +7,15 @@ import { CountdownService } from 'src/app/services/countdown.service';
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent implements OnInit {
-  time: string; 
+  private time: any;
+  private startGame: any; 
 
   constructor(private countdownService: CountdownService) {}
 
   ngOnInit() {}
 
   ngDoCheck() {
-    this.time = this.countdownService.showTimer();
+    this.time = this.countdownService.showTimer()[0];
+    this.startGame = this.countdownService.showTimer()[1];
   }
 }

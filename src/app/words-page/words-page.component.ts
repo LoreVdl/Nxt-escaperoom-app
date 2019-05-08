@@ -24,7 +24,7 @@ export class WordsPageComponent implements OnInit {
         else {
           this.startWordPosition++; 
         }
-      }.bind(this), 3000)
-    }.bind(this), 3000)
+      }.bind(this), 500)
+    }.bind(this), 500)
   }
 }
