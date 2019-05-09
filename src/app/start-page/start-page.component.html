@@ -1,1 +1,5 @@
-<button (click) = "startTimer()" [routerLink]="['/words']">Start</button>
+<div class = "startButton">
+    <div (click) = "startTimer()" [routerLink]="['/words']" class = "lettersDisapear">Start</div>
+    <img (click) = "startTimer()" [routerLink]="['/words']" src = "../../assets/images/start_button.png" />
+    <a (click) = "startTimer()" [routerLink]="['/words']">Start</a>
+</div>

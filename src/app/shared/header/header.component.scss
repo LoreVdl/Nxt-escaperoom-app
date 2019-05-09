@@ -1,15 +1,22 @@
-.header {
+@import "../../../lettertype.scss"; 
+
+.logo {
     text-align: center;
-    margin-top: 50px; 
+    margin-top: 30%; 
     
     img {
         text-align: center;
-        width: 90%; 
+        width: 85%; 
     }
+}
 
+.countdown {
+    text-align: center;
+    
     p {
         color: #fff;
         font-size: 50px; 
-        margin: 10px 0 10px 0; 
+        margin: 30px 0 30px 0; 
+        font-family: "futrfw";
     }
 }

@@ -1,9 +1,10 @@
-<div class = "header">
-    <img *ngIf = "!startGame" src = "../../assets/images/logo.png"/> 
-
-    <p>{{ time }}</p>
+<div class = "logo" *ngIf = "!startGame">
+    <img src = "../../assets/images/logo.png"/> 
 </div>
 
+<div class = "countdown">
+    <p>{{ time }}</p>
+</div>
 
 
 
