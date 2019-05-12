@@ -3,11 +3,13 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { StartPageComponent } from './start-page/start-page.component';
 import { CodeScreenOneComponent } from './code-screen-one/code-screen-one.component';
 import { WordsPageComponent } from './words-page/words-page.component';
+import { QRCodeOneComponent } from './qr-code-one/qr-code-one.component';
 
 const routes: Routes = [
   { path: '', component: StartPageComponent },
   { path: 'words', component: WordsPageComponent },
   { path: 'code-1', component: CodeScreenOneComponent },
+  { path: 'qrcode-1', component: QRCodeOneComponent },
 ];
 
 @NgModule({

@@ -1,0 +1,7 @@
+<ion-button (click) = "scanCode()">Scan code</ion-button>
+
+<ion-card *ngIf = "scannedCode">
+  <ion-card-content>
+    Result from scan: {{ scannedCode }}
+  </ion-card-content>
+</ion-card>

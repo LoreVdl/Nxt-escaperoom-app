@@ -5,6 +5,8 @@ import { RouteReuseStrategy } from '@angular/router';
 import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
+import { NgxQRCodeModule } from "ngx-qrcode2";
+import { BarcodeScanner } from "@ionic-native/barcode-scanner/ngx"; 
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
@@ -18,13 +20,15 @@ import { StartPageComponent } from './start-page/start-page.component';
 import { CodeScreenOneComponent } from './code-screen-one/code-screen-one.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { WordsPageComponent } from './words-page/words-page.component';
+import { QRCodeOneComponent } from './qr-code-one/qr-code-one.component';
 
 @NgModule({
   declarations: [
     AppComponent, 
     StartPageComponent, 
     CodeScreenOneComponent, 
-    WordsPageComponent
+    WordsPageComponent, 
+    QRCodeOneComponent
   ],
   entryComponents: [],
   imports: [
@@ -35,14 +39,16 @@ import { WordsPageComponent } from './words-page/words-page.component';
     AngularFirestoreModule,
     SharedModule,  
     ReactiveFormsModule, 
-    FormsModule
+    FormsModule, 
+    NgxQRCodeModule
   ],
   providers: [
     StatusBar,
     SplashScreen,
     CountdownService,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }, 
-    { provide: FirestoreSettingsToken, useValue: {} }
+    { provide: FirestoreSettingsToken, useValue: {} }, 
+    BarcodeScanner
   ],
   bootstrap: [AppComponent]
 })
