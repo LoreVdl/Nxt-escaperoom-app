@@ -27,4 +27,8 @@ export class CountdownService {
   showTimer() {
     return [this.time, this.gameStarted]; 
   }
+
+  loseTime() {
+    this.timer = this.timer - 60; 
+  }
 }

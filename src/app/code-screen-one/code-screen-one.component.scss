@@ -1,0 +1,71 @@
+form {
+    margin-top: 20px; 
+}
+
+ion-list {
+    ion-item {
+        --background: #000; 
+        --border-radius: 50%; 
+        width: 90px; 
+        --min-height: 84px; 
+        margin-bottom: 7.5px; 
+        margin-bottom: 7.5px; 
+        padding: 0;
+        display: inline-block;
+        --border-width: 4px; 
+        --inner-border-width: 0px; 
+        text-align: center;
+        vertical-align: middle;
+    }
+
+    div ion-item:nth-child(2) {
+        margin-right: 5px; 
+    }
+    
+    div ion-item:nth-child(3) {
+        margin-left: 5px; 
+    }
+
+    .room1, .room2, .room3 {
+        background-color: #000; 
+        text-align: center;
+        vertical-align: middle;
+
+        .roomIcons {
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        ion-icon {
+            width: 60px; 
+            height: 60px;
+            margin-right: 20px; 
+        }
+    }
+    
+    ion-input {
+        color: #fff; 
+        font-size: 50px;
+        width: 50px; 
+    }
+}
+
+.submitButton {
+    text-align: center;
+
+    ion-item {
+        --background: #000; 
+        --inner-border-width: 0px; 
+        display: inline-block;
+    
+        ion-icon {
+            width: 100px;
+            height: 100px;
+        }
+    }
+}
+
+.cls-1 {
+    fill: red; 
+}
+
