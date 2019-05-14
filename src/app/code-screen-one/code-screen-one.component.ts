@@ -50,27 +50,27 @@ export class CodeScreenOneComponent implements OnInit {
     else {
       if (this.form.value["code_number_1"] == this.code_number_1 && 
         this.form.value["code_number_2"] == this.code_number_2) {
-          document.getElementById("devRoom").setAttribute("src", "../../assets/icon/devroomGreen.svg"); 
+          document.getElementById("devRoom").setAttribute("src", "assets/icon/devroomGreen.svg"); 
       }
       if (this.form.value["code_number_3"] == this.code_number_1 && 
         this.form.value["code_number_3"] == this.code_number_2) {
-          document.getElementById("broadRoom").setAttribute("src", "../../assets/icon/devroomGreen.svg"); 
+          document.getElementById("broadRoom").setAttribute("src", "assets/icon/devroomGreen.svg"); 
       }
       if (this.form.value["code_number_5"] == this.code_number_1 && 
         this.form.value["code_number_6"] == this.code_number_2) {
-          document.getElementById("creaRoom").setAttribute("src", "../../assets/icon/devroomGreen.svg"); 
+          document.getElementById("creaRoom").setAttribute("src", "assets/icon/devroomGreen.svg"); 
       }
-      if (this.form.value["code_number_1"] != this.code_number_1 && 
+      if (this.form.value["code_number_1"] != this.code_number_1 ||
         this.form.value["code_number_2"] != this.code_number_2) {
-          document.getElementById("devRoom").setAttribute("src", "../../assets/icon/devroomRed.svg"); 
+          document.getElementById("devRoom").setAttribute("src", "assets/icon/devroomRed.svg"); 
       }
-      if (this.form.value["code_number_3"] != this.code_number_1 && 
-        this.form.value["code_number_3"] != this.code_number_2) {
-          document.getElementById("broadRoom").setAttribute("src", "../../assets/icon/devroomRed.svg"); 
+      if (this.form.value["code_number_3"] != this.code_number_1 ||
+        this.form.value["code_number_4"] != this.code_number_2) {
+          document.getElementById("broadRoom").setAttribute("src", "assets/icon/devroomRed.svg"); 
       }
-      if (this.form.value["code_number_5"] != this.code_number_1 && 
+      if (this.form.value["code_number_5"] != this.code_number_1 ||
         this.form.value["code_number_6"] != this.code_number_2) {
-          document.getElementById("creaRoom").setAttribute("src", "../../assets/icon/devroomRed.svg"); 
+          document.getElementById("creaRoom").setAttribute("src", "assets/icon/devroomRed.svg"); 
       }
       this.countdownService.loseTime(); 
     }
