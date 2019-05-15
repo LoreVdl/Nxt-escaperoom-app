@@ -21,6 +21,11 @@ import { CodeScreenOneComponent } from './code-screen-one/code-screen-one.compon
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { WordsPageComponent } from './words-page/words-page.component';
 import { QRCodeOneComponent } from './qr-code-one/qr-code-one.component';
+import { Camera } from "@ionic-native/camera/ngx"; 
+import { VicoryScreenTwoComponent } from './vicory-screen-two/vicory-screen-two.component';
+import * as firebase from 'firebase';
+
+firebase.initializeApp(environment.firebase); 
 
 @NgModule({
   declarations: [
@@ -28,7 +33,8 @@ import { QRCodeOneComponent } from './qr-code-one/qr-code-one.component';
     StartPageComponent, 
     CodeScreenOneComponent, 
     WordsPageComponent, 
-    QRCodeOneComponent
+    QRCodeOneComponent, 
+    VicoryScreenTwoComponent
   ],
   entryComponents: [],
   imports: [
@@ -48,7 +54,8 @@ import { QRCodeOneComponent } from './qr-code-one/qr-code-one.component';
     CountdownService,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }, 
     { provide: FirestoreSettingsToken, useValue: {} }, 
-    BarcodeScanner
+    BarcodeScanner, 
+    Camera
   ],
   bootstrap: [AppComponent]
 })
