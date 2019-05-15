@@ -5,6 +5,7 @@ import { CodeScreenOneComponent } from './code-screen-one/code-screen-one.compon
 import { WordsPageComponent } from './words-page/words-page.component';
 import { QRCodeOneComponent } from './qr-code-one/qr-code-one.component';
 import { VicoryScreenTwoComponent } from './vicory-screen-two/vicory-screen-two.component';
+import { GameOverScreenComponent } from './game-over-screen/game-over-screen.component';
 
 const routes: Routes = [
   { path: '', component: StartPageComponent },
@@ -12,6 +13,7 @@ const routes: Routes = [
   { path: 'code-1', component: CodeScreenOneComponent },
   { path: 'qrcode-1', component: QRCodeOneComponent },
   { path: 'victory-2', component: VicoryScreenTwoComponent },
+  { path: 'game-over', component: GameOverScreenComponent },
 ];
 
 @NgModule({

@@ -1,0 +1,18 @@
+@import "../../lettertype.scss"; 
+
+.gameOver {
+    text-align: center;
+    margin-top: 50px; 
+
+    ion-icon {
+        width: 200px; 
+        height: 200px;
+    }
+
+    p {
+        font-size: 50px; 
+        color: #fff; 
+        margin-top: 50px; 
+        font-family: "futrfw"; 
+    }
+}
