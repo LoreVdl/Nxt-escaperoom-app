@@ -10,6 +10,7 @@ export class CountdownService {
   public timer = 1800; 
   public time = '30:00';
   public gameStarted = false;
+  public endOfGame = false; 
 
   constructor(private router: Router) { }
 
@@ -19,13 +20,18 @@ export class CountdownService {
       this.timer--;
       this.time = moment.utc(this.timer*1000).format("mm:ss");
 
-      if(this.timer <= 0) {
+      if (this.timer <= 0) {
         this.timer = 0; 
         this.time = '00:00'; 
         clearInterval(this.intervalVar);
         this.gameOver(); 
 
       }
+
+      if (this.endOfGame) {
+        clearInterval(this.intervalVar); 
+      }
+
     }.bind(this), 1000);
   }
 
@@ -39,7 +45,13 @@ export class CountdownService {
 
   gameOver() {
     let element = document.getElementsByClassName("countdown")[0] as HTMLElement; 
-    element.style.color = "red"; 
+    element.style.color = "#ff0100"; 
     this.router.navigate(['/game-over']); 
+  }
+
+  endGame() {
+    let element = document.getElementsByClassName("countdown")[0] as HTMLElement; 
+    element.style.color = "#00ff06"; 
+    this.endOfGame = true;  
   }
 }

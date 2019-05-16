@@ -25,6 +25,8 @@ import { Camera } from "@ionic-native/camera/ngx";
 import { VicoryScreenTwoComponent } from './vicory-screen-two/vicory-screen-two.component';
 import * as firebase from 'firebase';
 import { GameOverScreenComponent } from './game-over-screen/game-over-screen.component';
+import { EndPartOneScreenComponent } from './end-part-one-screen/end-part-one-screen.component';
+import { VictoryOneScreenComponent } from './victory-one-screen/victory-one-screen.component';
 
 firebase.initializeApp(environment.firebase); 
 
@@ -36,7 +38,9 @@ firebase.initializeApp(environment.firebase);
     WordsPageComponent, 
     QRCodeOneComponent, 
     VicoryScreenTwoComponent, 
-    GameOverScreenComponent
+    GameOverScreenComponent, 
+    EndPartOneScreenComponent, 
+    VictoryOneScreenComponent
   ],
   entryComponents: [],
   imports: [

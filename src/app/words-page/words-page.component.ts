@@ -19,16 +19,10 @@ export class WordsPageComponent implements OnInit {
   ngOnInit() {
     this.intervalVar = setInterval(function() {
       this.word = this.words[this.startWordPosition]; 
-      var element = document.getElementById("words"); 
-      var elem = document.createElement("div");
-      elem.textContent = this.word;
-      elem.style.position = "absolute";
-      elem.style.left = Math.round(Math.random() * this.fullWidth) + "px";
-      elem.style.top = Math.round(Math.random() * this.fullHeight) + "px";
-      element.appendChild(elem);
+      var element = document.getElementById("word") as HTMLElement; 
+      element.textContent = this.word;
 
       this.intervalVar2 = setTimeout(function() {
-        elem.remove();
         if (this.startWordPosition === ((this.words.length)-1)) {
           this.startWordPosition = 0; 
         }

@@ -44,7 +44,7 @@ export class CodeScreenOneComponent implements OnInit {
         this.form.value["code_number_4"] == this.code_number_4 &&
         this.form.value["code_number_5"] == this.code_number_5 && 
         this.form.value["code_number_6"] == this.code_number_6) {
-      this.router.navigate(['']); 
+      this.router.navigate(['/end-part-1']); 
     }
 
     else {
