@@ -1,4 +1,7 @@
 import { Component, OnInit, Renderer2 } from '@angular/core';
+import { FormBuilder, Validators, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
+import { CountdownService } from '../services/countdown.service';
 
 @Component({
   selector: 'app-words-page',
@@ -6,17 +9,20 @@ import { Component, OnInit, Renderer2 } from '@angular/core';
   styleUrls: ['./words-page.component.scss'],
 })
 export class WordsPageComponent implements OnInit {
-  private words: string[] = ["bal", "aap", "fiets", "test"]; 
+  private words: string[] = ["Bal", "Aap", "Fiets", "Test"]; 
   private word = "bal"; 
   public intervalVar; 
   public intervalVar2; 
   public startWordPosition = 0; 
   public fullWidth = 400; 
   public fullHeight = 400; 
+  private song = "broeder jacob"; 
+  private form: FormGroup; 
 
-  constructor(private renderer: Renderer2) { }
+  constructor(private formBuilder: FormBuilder, public router: Router, private countdownService: CountdownService) { }
 
   ngOnInit() {
+    this.setForm(); 
     this.intervalVar = setInterval(function() {
       this.word = this.words[this.startWordPosition]; 
       var element = document.getElementById("word") as HTMLElement; 
@@ -33,7 +39,18 @@ export class WordsPageComponent implements OnInit {
     }.bind(this), 500)
   }
 
-  ngOnChange() {
-    
+  setForm() {
+    this.form = this.formBuilder.group({
+      song: ['', Validators.required], 
+    })
+  }
+
+  verifySong() {
+    if (this.form.value["song"].toLowerCase() === this.song) {
+      this.router.navigate(['code-1']); 
+    }
+    else {
+      this.countdownService.loseTime(); 
+    }
   }
 }

@@ -1,4 +1,17 @@
 <div id = "words">
     <p id = "word"></p>
-    <button [routerLink]="['/code-1']">Next</button>
+    <form *ngIf = "form"[formGroup] = "form" (ngSubmit) = "verifySong()">
+        <div class = "piano">
+            <ion-item>
+                <ion-input type = "text" formControlName = "song" maxLength = "15"></ion-input>
+            </ion-item>
+            <img src = "assets/icon/piano.png" />
+        </div>
+
+        <div class = "submitButton">
+            <ion-item>
+                <ion-icon src = "../../assets/icon/key.svg" (click) = "verifySong()"></ion-icon>
+            </ion-item>
+        </div>
+    </form>
 </div>

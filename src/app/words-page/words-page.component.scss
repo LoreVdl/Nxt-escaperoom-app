@@ -2,7 +2,18 @@
 
 #words {
     height: 100vh;
-    position: relative;
+    text-align: center; 
+    vertical-align: middle; 
+    margin-top: 0; 
+}
+
+#word {
+    border-bottom: 3px solid #fff; 
+    border-top: 3px solid #fff; 
+    padding: 10px 0 10px 0; 
+    width: 300px; 
+    display: inline-block;
+    font-size: 40px; 
 }
 
 div {
@@ -10,4 +21,47 @@ div {
     font-size: 20px; 
     margin: 30px 0 30px 0; 
     font-family: "futrfw";
-} 
+}
+
+button {
+    display: block;
+}
+
+.piano {
+    display: inline-block;
+    text-align: center;
+
+    img {
+        max-width: 250px; 
+        margin-top: -2px; 
+    }
+
+    ion-item {
+        --background: #000; 
+        --inner-border-width: 0px;
+        border: 3px solid #fff;  
+        width: 300px; 
+        
+    
+        ion-input {
+            color: #fff; 
+            font-family: "futrfw"; 
+            height: 60px;
+        }
+    }
+}
+
+.submitButton {
+    text-align: center;
+
+    ion-item {
+        --background: #000; 
+        --inner-border-width: 0px; 
+        display: inline-block;
+    
+        ion-icon {
+            width: 100px;
+            height: 100px;
+        }
+    }
+}
