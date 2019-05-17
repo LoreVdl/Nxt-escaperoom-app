@@ -17,7 +17,7 @@ export class VictoryOneScreenComponent implements OnInit {
 
     let router = this.router; 
     this.intervalVar = setTimeout(function() {
-      router.navigate(['']); 
+      router.navigate(['/qrcode-1']); 
     }, 20000); 
   }
 

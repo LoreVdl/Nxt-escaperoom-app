@@ -9,11 +9,12 @@ import { CountdownService } from 'src/app/services/countdown.service';
 })
 export class StartPageComponent implements OnInit {
 
-  constructor(private countdownService: CountdownService) {}
+  constructor(private countdownService: CountdownService, public router: Router) {}
 
   ngOnInit() {}
 
   startTimer() {
     this.countdownService.startTimer(); 
+    this.router.navigate(['/victory-2']);
   }
 }

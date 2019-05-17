@@ -1,7 +1,7 @@
-<ion-button (click) = "scanCode()">Scan code</ion-button>
-
-<ion-card *ngIf = "scannedCode">
-  <ion-card-content>
-    Result from scan: {{ scannedCode }}
-  </ion-card-content>
-</ion-card>
+<div class = "qrscanner">
+  <img id = "bug" src = "assets/icon/bug.svg" (click) = "scanCode()"/>
+  <p *ngIf = "scannedCode">{{ code }}</p>
+</div>
+<div *ngIf = "scannedcode === code" class = "key">
+    <ion-icon src = "assets/icon/key.svg" (click) = "verifyCode()"></ion-icon>
+</div>

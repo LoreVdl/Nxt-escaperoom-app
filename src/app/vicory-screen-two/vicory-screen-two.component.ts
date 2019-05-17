@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Camera, CameraOptions } from "@ionic-native/camera/ngx"
 import { FirebaseService } from '../services/firebase.service';
+import { CountdownService } from '../services/countdown.service';
 
 @Component({
   selector: 'app-vicory-screen-two',
@@ -10,9 +11,11 @@ import { FirebaseService } from '../services/firebase.service';
 export class VicoryScreenTwoComponent implements OnInit {
   public picture: string = null; 
 
-  constructor(private camera: Camera, private firebaseService: FirebaseService) { }
+  constructor(private camera: Camera, private firebaseService: FirebaseService, private countdownService: CountdownService) { }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.countdownService.endGame(); 
+  }
 
   takePicture() {
     const options: CameraOptions = {
@@ -24,8 +27,11 @@ export class VicoryScreenTwoComponent implements OnInit {
     }
 
     this.camera.getPicture(options).then(imageData => {
-      this.picture = imageData ; 
-      this.uploadPicture(); 
+      this.picture = imageData;
+
+      if (this.picture) {
+        this.uploadPicture();
+      } 
     }, (err) => {
       
     })

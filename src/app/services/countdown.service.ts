@@ -39,19 +39,43 @@ export class CountdownService {
     return [this.time, this.gameStarted]; 
   }
 
+  startTimer2() {
+    let element = document.getElementsByClassName("countdown")[0] as HTMLElement; 
+    element.style.color = "#fff"; 
+    this.endOfGame = false; 
+    this.timer = 600; 
+    this.time = '10:00';
+    this.intervalVar = setInterval(function() {
+      this.timer--;
+      this.time = moment.utc(this.timer*1000).format("mm:ss");
+
+      if (this.timer <= 0) {
+        this.timer = 0; 
+        this.time = '00:00'; 
+        clearInterval(this.intervalVar);
+        this.gameOver(); 
+      }
+
+      if (this.endOfGame) {
+        clearInterval(this.intervalVar); 
+      }
+
+    }.bind(this), 1000);
+  }
+
   loseTime() {
     this.timer = this.timer - 60; 
   }
 
   gameOver() {
     let element = document.getElementsByClassName("countdown")[0] as HTMLElement; 
-    element.style.color = "#ff0100"; 
+    element.style.color = "#E90000"; 
     this.router.navigate(['/game-over']); 
   }
 
   endGame() {
     let element = document.getElementsByClassName("countdown")[0] as HTMLElement; 
-    element.style.color = "#00ff06"; 
+    element.style.color = "#0BE900"; 
     this.endOfGame = true;  
   }
 }

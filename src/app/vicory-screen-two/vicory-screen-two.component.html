@@ -1,2 +1,6 @@
-<ion-button (click) = "takePicture()">Take picture</ion-button>
-<ion-button *ngIf = "picture" (click) = "uploadPicture()">Upload picture</ion-button>
+<div class = "photo">
+    <p>You are</p>
+    <p class = "nxt">NxT</p>
+    <ion-icon *ngIf = "!picture" src ="assets/icon/camera.svg" (click) = "takePicture()">Take picture</ion-icon>
+</div>
+

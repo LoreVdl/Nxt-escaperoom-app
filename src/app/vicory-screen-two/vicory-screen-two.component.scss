@@ -1,0 +1,25 @@
+.photo {
+    text-align: center;
+    margin-top: 20px; 
+
+    ion-icon {
+        width: 80px; 
+        height: 80px;
+        animation: spin 3.5s; 
+        animation-iteration-count: infinite; 
+    }
+
+    p {
+        font-size: 50px; 
+        color: #fff; 
+        margin-top: 50px; 
+        font-family: "futrfw"; 
+        margin-bottom: 10px; 
+    }
+
+    .nxt {
+        font-size: 90px; 
+        margin-top: 0;
+        margin-bottom: 50px; 
+    }
+}
