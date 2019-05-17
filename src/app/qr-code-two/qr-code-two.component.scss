@@ -1,0 +1,32 @@
+@import "../../lettertype.scss"; 
+
+.qrscanner {
+    height: 200px;
+
+    img {
+        width: 200px; 
+        height: 200px;
+        position: absolute; 
+        left: 23%;
+    }
+
+    p {
+        position: absolute; 
+        color: #fff; 
+        font-family: "futrfw"; 
+        font-size: 27px; 
+        width: 55px;
+        left: 43%;
+        top: 10%; 
+    }
+}
+
+.key {
+    text-align: center;
+    margin-bottom: 10%; 
+    
+    ion-icon {
+        width: 100px;
+        height: 100px;
+    }
+}

@@ -15,6 +15,6 @@ export class StartPageComponent implements OnInit {
 
   startTimer() {
     this.countdownService.startTimer(); 
-    this.router.navigate(['/victory-2']);
+    this.router.navigate(['/qrcode-1']);
   }
 }

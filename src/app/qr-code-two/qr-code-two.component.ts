@@ -1,14 +1,15 @@
 import { Component, OnInit } from '@angular/core';
-import { BarcodeScanner } from '@ionic-native/barcode-scanner/ngx';
-import { CountdownService } from '../services/countdown.service';
 import { Router } from '@angular/router';
+import { CountdownService } from '../services/countdown.service';
+import { BarcodeScanner } from '@ionic-native/barcode-scanner/ngx';
 
 @Component({
-  selector: 'app-qr-code-one',
-  templateUrl: './qr-code-one.component.html',
-  styleUrls: ['./qr-code-one.component.scss'],
+  selector: 'app-qr-code-two',
+  templateUrl: './qr-code-two.component.html',
+  styleUrls: ['./qr-code-two.component.scss'],
 })
-export class QRCodeOneComponent implements OnInit {
+export class QrCodeTwoComponent implements OnInit {
+
   qrData = null; 
   createdCode = null; 
   scannedCode = null; 
