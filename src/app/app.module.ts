@@ -28,6 +28,9 @@ import { GameOverScreenComponent } from './game-over-screen/game-over-screen.com
 import { EndPartOneScreenComponent } from './end-part-one-screen/end-part-one-screen.component';
 import { VictoryOneScreenComponent } from './victory-one-screen/victory-one-screen.component';
 import { QrCodeTwoComponent } from './qr-code-two/qr-code-two.component';
+import { GameComponent } from './game/game.component';
+import { QrCodeThreeComponent } from './qr-code-three/qr-code-three.component';
+import { QrCodeFourComponent } from './qr-code-four/qr-code-four.component';
 
 firebase.initializeApp(environment.firebase); 
 
@@ -42,7 +45,10 @@ firebase.initializeApp(environment.firebase);
     GameOverScreenComponent, 
     EndPartOneScreenComponent, 
     VictoryOneScreenComponent, 
-    QrCodeTwoComponent
+    QrCodeTwoComponent, 
+    GameComponent, 
+    QrCodeThreeComponent, 
+    QrCodeFourComponent
   ],
   entryComponents: [],
   imports: [

@@ -1,0 +1,21 @@
+<div class = "game">
+  <div class = "buttons">
+      <ion-button id = "option1" class = "button1" (click) = "checkAnswer($event)"><ion-icon id = "icon1" name="close"></ion-icon></ion-button>
+      <ion-button id = "option2" class = "button2" (click) = "checkAnswer($event)"><ion-icon id = "icon2" name="checkmark"></ion-icon></ion-button>
+      <img class = "smile" src = "assets/icon/smile.svg" />
+  </div>
+
+  <div class = "circles">
+    <ion-icon class = "circle1" name="ios-radio-button-on"></ion-icon>
+    <ion-icon class = "circle2" name="ios-radio-button-on"></ion-icon>
+    <ion-icon class = "circle3" name="ios-radio-button-on"></ion-icon>
+    <ion-icon class = "circle4" name="ios-radio-button-on"></ion-icon>
+    <ion-icon class = "circle5" name="ios-radio-button-on"></ion-icon>
+  </div>
+
+  <div class = "submitButton" *ngIf = "win">
+      <ion-item>
+        <ion-icon src = "assets/icon/key.svg" (click) = "verifyCode()"></ion-icon>
+      </ion-item>
+  </div>
+</div>

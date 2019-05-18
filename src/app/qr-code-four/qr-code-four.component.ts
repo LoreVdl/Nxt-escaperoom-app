@@ -1,27 +1,27 @@
 import { Component, OnInit } from '@angular/core';
-import { BarcodeScanner } from '@ionic-native/barcode-scanner/ngx';
-import { CountdownService } from '../services/countdown.service';
 import { Router } from '@angular/router';
+import { CountdownService } from '../services/countdown.service';
+import { BarcodeScanner } from '@ionic-native/barcode-scanner/ngx';
 
 @Component({
-  selector: 'app-qr-code-one',
-  templateUrl: './qr-code-one.component.html',
-  styleUrls: ['./qr-code-one.component.scss'],
+  selector: 'app-qr-code-four',
+  templateUrl: './qr-code-four.component.html',
+  styleUrls: ['./qr-code-four.component.scss'],
 })
-export class QRCodeOneComponent implements OnInit {
+export class QrCodeFourComponent implements OnInit {
+
   qrData = null; 
   createdCode = null; 
   scannedCode = null; 
-  private code = "ABCDEF"; 
+  private code = "ABCDE"; 
 
   constructor(public router: Router, private countdownService: CountdownService, private barcodeScanner: BarcodeScanner) { }
 
-  ngOnInit() {
-    this.countdownService.startTimer(); 
-  }
+  ngOnInit() {}
 
   ngDoCheck() {
     if (this.scannedCode) {
+      console.log("check");
       this.checkCode(); 
     }
   }
@@ -34,15 +34,15 @@ export class QRCodeOneComponent implements OnInit {
 
   checkCode() {
     if (this.code === this.scannedCode) {
-      document.getElementById("bug").setAttribute("src", "assets/icon/bugGreen.svg"); 
+      document.getElementById("bug3").setAttribute("src", "assets/icon/bugGreen.svg"); 
     }
     else {
-      document.getElementById("bug").setAttribute("src", "assets/icon/bugr.svg"); 
+      document.getElementById("bug3").setAttribute("src", "assets/icon/bugr.svg"); 
     }
   }
 
   navigate() {
-      this.router.navigate(['/qrcode-2'])
+      this.router.navigate(['qrcode-4'])
   }
 
 }

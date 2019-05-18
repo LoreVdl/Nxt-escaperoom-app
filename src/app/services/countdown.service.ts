@@ -16,6 +16,9 @@ export class CountdownService {
 
   startTimer() {
     this.gameStarted = true; 
+    let element = document.getElementsByClassName("countdown")[0] as HTMLElement; 
+    element.style.color = "#fff"; 
+    this.endOfGame = false; 
     this.intervalVar = setInterval(function() {
       this.timer--;
       this.time = moment.utc(this.timer*1000).format("mm:ss");
@@ -37,30 +40,6 @@ export class CountdownService {
 
   showTimer() {
     return [this.time, this.gameStarted]; 
-  }
-
-  startTimer2() {
-    let element = document.getElementsByClassName("countdown")[0] as HTMLElement; 
-    element.style.color = "#fff"; 
-    this.endOfGame = false; 
-    this.timer = 600; 
-    this.time = '10:00';
-    this.intervalVar = setInterval(function() {
-      this.timer--;
-      this.time = moment.utc(this.timer*1000).format("mm:ss");
-
-      if (this.timer <= 0) {
-        this.timer = 0; 
-        this.time = '00:00'; 
-        clearInterval(this.intervalVar);
-        this.gameOver(); 
-      }
-
-      if (this.endOfGame) {
-        clearInterval(this.intervalVar); 
-      }
-
-    }.bind(this), 1000);
   }
 
   loseTime() {

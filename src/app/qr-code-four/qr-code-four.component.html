@@ -1,10 +1,8 @@
 <div class = "qrscanner">
-    <img id = "bug2" src = "assets/icon/bug.svg" (click) = "scanCode()"/>
+    <img id = "bug4" src = "assets/icon/bug.svg" (click) = "scanCode()"/>
     <p *ngIf = "scannedCode === code">{{ code }}</p>
 </div>
 
 <div *ngIf = "scannedCode === code" class = "key">
     <ion-icon src = "assets/icon/key.svg" (click) = "navigate()"></ion-icon>
 </div>
-
-  
