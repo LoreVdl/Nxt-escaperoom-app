@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 export class EndPartOneScreenComponent implements OnInit {
   public intervalVar; 
 
-  constructor(private countdownService: CountdownService, public router: Router) { }
+  constructor(public router: Router) { }
 
   ngOnInit() {
     let router = this.router; 

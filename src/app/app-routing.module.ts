@@ -12,6 +12,7 @@ import { QrCodeTwoComponent } from './qr-code-two/qr-code-two.component';
 import { GameComponent } from './game/game.component';
 import { QrCodeThreeComponent } from './qr-code-three/qr-code-three.component';
 import { QrCodeFourComponent } from './qr-code-four/qr-code-four.component';
+import { BroadcastingCodeScreenComponent } from './broadcasting-code-screen/broadcasting-code-screen.component';
 
 const routes: Routes = [
   { path: '', component: StartPageComponent },
@@ -25,7 +26,8 @@ const routes: Routes = [
   { path: 'qrcode-2', component: QrCodeTwoComponent },
   { path: 'game', component: GameComponent },
   { path: 'qrcode-3', component: QrCodeThreeComponent },
-  { path: 'qrcode-4', component: QrCodeFourComponent }
+  { path: 'qrcode-4', component: QrCodeFourComponent }, 
+  { path: 'broadcasting-code', component: BroadcastingCodeScreenComponent }
 ];
 
 @NgModule({

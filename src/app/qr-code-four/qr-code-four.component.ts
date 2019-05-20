@@ -21,7 +21,6 @@ export class QrCodeFourComponent implements OnInit {
 
   ngDoCheck() {
     if (this.scannedCode) {
-      console.log("check");
       this.checkCode(); 
     }
   }
@@ -34,15 +33,15 @@ export class QrCodeFourComponent implements OnInit {
 
   checkCode() {
     if (this.code === this.scannedCode) {
-      document.getElementById("bug3").setAttribute("src", "assets/icon/bugGreen.svg"); 
+      document.getElementById("bug4").setAttribute("src", "assets/icon/bugGreen.svg"); 
     }
     else {
-      document.getElementById("bug3").setAttribute("src", "assets/icon/bugr.svg"); 
+      document.getElementById("bug4").setAttribute("src", "assets/icon/bugr.svg"); 
     }
   }
 
   navigate() {
-      this.router.navigate(['qrcode-4'])
+      this.router.navigate(['/victory-2'])
   }
 
 }

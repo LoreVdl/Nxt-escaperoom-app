@@ -46,9 +46,12 @@ export class WordsPageComponent implements OnInit {
 
   verifySong() {
     if (this.form.value["song"].toLowerCase() === this.song) {
-      this.router.navigate(['code-1']); 
+      this.router.navigate(['broadcasting-code']); 
     }
     else {
+      let element = document.getElementsByTagName("ion-item")[0] as HTMLElement;
+      element.style.borderColor = "#E90000";  
+      document.getElementById("pianoImage").setAttribute("src", "assets/icon/pianored.png"); 
       this.countdownService.loseTime(); 
     }
   }
