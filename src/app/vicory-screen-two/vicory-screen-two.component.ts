@@ -38,9 +38,7 @@ export class VicoryScreenTwoComponent implements OnInit {
   }
 
   uploadPicture() {
-    this.firebaseService.uploadImage(this.picture).then(photoURL => {
-      
-    })
+    this.firebaseService.uploadImage(this.picture); 
   }
 
 }

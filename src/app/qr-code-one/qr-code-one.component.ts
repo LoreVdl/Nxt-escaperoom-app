@@ -56,7 +56,7 @@ export class QRCodeOneComponent implements OnInit {
       event: ev, 
       animated: true, 
       translucent: true, 
-      componentProps: {page: "qr-code-first", room: room}
+      componentProps: {page: "qr-code-one", room: room}
     }); 
 
     return await popover.present();
