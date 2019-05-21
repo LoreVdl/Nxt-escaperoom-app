@@ -1,0 +1,21 @@
+@import "../../lettertype.scss"; 
+
+ion-card {
+    width: 250px;
+    margin: 0;
+    background-color: rgba($color: #000, $alpha: 0.8);
+
+    ion-card-content {
+        padding-top: 0; 
+        color: #fff;
+    }
+
+    ion-card-header {
+        font-family: "futrfw"; 
+
+         ion-card-title {
+            font-size: 19px; 
+            color: #fff;
+         }
+    }
+}

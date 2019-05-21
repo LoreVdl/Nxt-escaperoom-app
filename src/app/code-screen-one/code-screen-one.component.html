@@ -1,5 +1,5 @@
 <form *ngIf = "form"[formGroup] = "form" (ngSubmit) = "verifyCode()">
-  <ion-list>
+  <ion-list mode = "ios">
     <div class = "room1">
         <div class = "roomIcons">
             <ion-icon id = "devRoom" src = "assets/icon/devroom.svg" (click) = "verifyCode()"></ion-icon>
@@ -45,3 +45,20 @@
     </ion-item>
   </div>
 </form>
+
+<ion-fab vertical = "bottom" horizontal = "end" slot = "fixed">
+  <ion-fab-button>
+      <ion-icon src = "assets/icon/lamp.svg"></ion-icon>
+  </ion-fab-button>
+  <ion-fab-list side = "start">
+      <ion-fab-button (click) = "openDevTip()">
+          <ion-icon src = "assets/icon/devroom.svg"></ion-icon>
+      </ion-fab-button>
+      <ion-fab-button>
+          <ion-icon src = "assets/icon/broadroom.svg"></ion-icon>
+      </ion-fab-button>
+      <ion-fab-button>
+          <ion-icon src = "assets/icon/crearoom.svg"></ion-icon>
+      </ion-fab-button>
+  </ion-fab-list>
+</ion-fab>

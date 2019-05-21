@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { CountdownService } from '../services/countdown.service';
+import { PopoverController } from '@ionic/angular';
+import { TipsComponent } from '../tips/tips.component';
 
 @Component({
   selector: 'app-code-screen-one',
@@ -20,7 +22,7 @@ export class CodeScreenOneComponent implements OnInit {
 
   private errorMessage: string; 
 
-  constructor(private countdownService: CountdownService, private router: Router, private formBuilder: FormBuilder) { }
+  constructor(public popoverController: PopoverController, private countdownService: CountdownService, private router: Router, private formBuilder: FormBuilder) { }
 
   ngOnInit() {
     this.setForm();
@@ -74,6 +76,20 @@ export class CodeScreenOneComponent implements OnInit {
       }
       this.countdownService.loseTime(); 
     }
+  }
+
+  async openDevTip(ev: any) {
+    this.countdownService.loseTime(); 
+
+    const popover = await this.popoverController.create({
+      component: TipsComponent, 
+      event: ev, 
+      animated: true, 
+      translucent: true, 
+      componentProps: {page: "code-one"}
+    }); 
+
+    return await popover.present();
   }
 
 }

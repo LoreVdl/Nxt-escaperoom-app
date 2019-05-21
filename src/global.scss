@@ -21,3 +21,26 @@ ion-content {
 ion-header {
     margin-top: 15%; 
 }
+
+.sc-ion-popover-ios-h {
+    --width: 250px; 
+}
+
+ion-fab {
+    ion-fab-button {
+        --background: #000; 
+        border: 2px solid grey;
+        border-radius: 50%; 
+
+        ion-icon {
+            width: 35px; 
+            height: 35px;
+        }
+    }
+
+    ion-fab-list {
+        ion-fab-button {
+            border: 0px solid #000; 
+        }
+    }
+}

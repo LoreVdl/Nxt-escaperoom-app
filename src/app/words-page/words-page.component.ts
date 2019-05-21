@@ -2,7 +2,8 @@ import { Component, OnInit, Renderer2 } from '@angular/core';
 import { FormBuilder, Validators, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { CountdownService } from '../services/countdown.service';
-import { delay } from 'q';
+import { PopoverController } from '@ionic/angular';
+import { TipsComponent } from '../tips/tips.component';
 
 @Component({
   selector: 'app-words-page',
@@ -21,7 +22,7 @@ export class WordsPageComponent implements OnInit {
   private song = "broeder jacob"; 
   private form: FormGroup; 
 
-  constructor(private formBuilder: FormBuilder, public router: Router, private countdownService: CountdownService) { }
+  constructor(private formBuilder: FormBuilder, public router: Router, private countdownService: CountdownService, public popoverController: PopoverController) { }
 
   ngOnInit() {
     this.setForm(); 
@@ -54,5 +55,20 @@ export class WordsPageComponent implements OnInit {
       document.getElementById("pianoImage").setAttribute("src", "assets/icon/pianored.png"); 
       this.countdownService.loseTime(); 
     }
+  }
+
+  async openTip(event, ev: any) {
+    let room = event.target.id; 
+    this.countdownService.loseTime(); 
+
+    const popover = await this.popoverController.create({
+      component: TipsComponent, 
+      event: ev, 
+      animated: true, 
+      translucent: true, 
+      componentProps: {page: "words", room: room} 
+    }); 
+
+    return await popover.present();
   }
 }

@@ -32,6 +32,7 @@ import { GameComponent } from './game/game.component';
 import { QrCodeThreeComponent } from './qr-code-three/qr-code-three.component';
 import { QrCodeFourComponent } from './qr-code-four/qr-code-four.component';
 import { BroadcastingCodeScreenComponent } from './broadcasting-code-screen/broadcasting-code-screen.component';
+import { TipsComponent } from './tips/tips.component';
 
 firebase.initializeApp(environment.firebase); 
 
@@ -50,9 +51,12 @@ firebase.initializeApp(environment.firebase);
     GameComponent, 
     QrCodeThreeComponent, 
     QrCodeFourComponent, 
-    BroadcastingCodeScreenComponent
+    BroadcastingCodeScreenComponent, 
+    TipsComponent
   ],
-  entryComponents: [],
+  entryComponents: [
+    TipsComponent
+  ],
   imports: [
     BrowserModule, 
     IonicModule.forRoot(), 
