@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { CountdownService } from '../services/countdown.service';
+import { TipsComponent } from '../tips/tips.component';
+import { PopoverController } from '@ionic/angular';
 
 @Component({
   selector: 'app-game',
@@ -20,7 +22,7 @@ export class GameComponent implements OnInit {
   private correctAnswer; 
   private win = false; 
 
-  constructor(public router: Router, private countdownService: CountdownService) { }
+  constructor(public popoverController: PopoverController, public router: Router, private countdownService: CountdownService) { }
 
   ngOnInit() {
     /*let element = document.getElementsByClassName("buttons")[0]; 
@@ -97,6 +99,21 @@ export class GameComponent implements OnInit {
 
   verifyCode() {
     this.router.navigate(['qrcode-3']); 
+  }
+
+  async openTip(event, ev: any) {
+    let room = event.target.id; 
+    this.countdownService.loseTime(); 
+
+    const popover = await this.popoverController.create({
+      component: TipsComponent, 
+      event: ev, 
+      animated: true, 
+      translucent: true, 
+      componentProps: {page: "game", room: room}
+    }); 
+
+    return await popover.present();
   }
 
 }

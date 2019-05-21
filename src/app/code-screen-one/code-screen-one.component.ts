@@ -78,7 +78,8 @@ export class CodeScreenOneComponent implements OnInit {
     }
   }
 
-  async openDevTip(ev: any) {
+  async openTip(event, ev: any) {
+    let room = event.target.id; 
     this.countdownService.loseTime(); 
 
     const popover = await this.popoverController.create({
@@ -86,7 +87,7 @@ export class CodeScreenOneComponent implements OnInit {
       event: ev, 
       animated: true, 
       translucent: true, 
-      componentProps: {page: "code-one"}
+      componentProps: {page: "code-one", room: room}
     }); 
 
     return await popover.present();

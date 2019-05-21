@@ -18,4 +18,21 @@
         <ion-icon src = "assets/icon/key.svg" (click) = "verifyCode()"></ion-icon>
       </ion-item>
   </div>
+
+  <ion-fab vertical = "bottom" horizontal = "end" slot = "fixed">
+    <ion-fab-button>
+        <ion-icon src = "assets/icon/lamp.svg"></ion-icon>
+    </ion-fab-button>
+    <ion-fab-list side = "start">
+        <ion-fab-button (click) = "openTip($event)">
+            <ion-icon id = "Development" src = "assets/icon/devroom.svg"></ion-icon>
+        </ion-fab-button>
+        <ion-fab-button (click) = "openTip($event)">
+            <ion-icon id = "Broadcast" src = "assets/icon/broadroom.svg"></ion-icon>
+        </ion-fab-button>
+        <ion-fab-button (click) = "openTip($event)">
+            <ion-icon id = "Creative" src = "assets/icon/crearoom.svg"></ion-icon>
+        </ion-fab-button>
+    </ion-fab-list>
+  </ion-fab>
 </div>
