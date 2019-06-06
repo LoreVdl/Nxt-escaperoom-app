@@ -17,6 +17,8 @@ export class VictoryOneScreenComponent implements OnInit {
 
     let router = this.router; 
     this.intervalVar = setTimeout(function() {
+      let element = document.getElementById("victoryOne"); 
+      element.className = "ion-page-hidden";
       router.navigate(['/qrcode-1']); 
     }, 20000); 
   }

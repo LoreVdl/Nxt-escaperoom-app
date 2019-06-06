@@ -23,6 +23,7 @@ export class StartPageComponent implements OnInit {
     let element = document.getElementsByTagName('img')[1]; 
     element.src = "../../assets/images/start.gif"; 
     this.intervalVar = setTimeout(function() {
+      element.className = "ion-page-hidden"; 
       this.startTimer(); 
     }.bind(this), 800);
   }

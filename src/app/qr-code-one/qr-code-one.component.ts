@@ -44,7 +44,9 @@ export class QRCodeOneComponent implements OnInit {
   }
 
   navigate() {
-      this.router.navigate(['/qrcode-2'])
+    let element = document.getElementById("qrscanner"); 
+    element.className = "ion-page-hidden";
+    this.router.navigate(['/qrcode-2'])
   }
 
   async openTip(event, ev: any) {

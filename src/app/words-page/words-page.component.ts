@@ -29,6 +29,7 @@ export class WordsPageComponent implements OnInit {
     this.intervalVar = setInterval(function() {
       var element = document.getElementById("word") as HTMLElement; 
       this.intervalVar3 = setTimeout(() => {
+        element.style.color = "#fff"; 
         this.word = this.words[this.startWordPosition]; 
         element.textContent = this.word;
         if (this.startWordPosition === ((this.words.length)-1)) {
@@ -37,12 +38,12 @@ export class WordsPageComponent implements OnInit {
         else {
           this.startWordPosition++; 
         }
-      }, 400);
-      
+      }, 100);
+
       this.intervalVar2 = setTimeout(() => {
-        this.word = ""; 
+        element.style.color = "#000"; 
         element.textContent = this.word;
-      }, 100); 
+      }, 400); 
     }.bind(this), 500)
   }
 
@@ -54,6 +55,8 @@ export class WordsPageComponent implements OnInit {
 
   verifySong() {
     if (this.form.value["song"].toLowerCase() === this.song) {
+      let element = document.getElementById("words"); 
+      element.className = "ion-page-hidden"; 
       this.router.navigate(['broadcasting-code']); 
     }
     else {

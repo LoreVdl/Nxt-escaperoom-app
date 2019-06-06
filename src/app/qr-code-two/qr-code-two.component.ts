@@ -43,6 +43,8 @@ export class QrCodeTwoComponent implements OnInit {
   }
 
   navigate() {
+      let element = document.getElementById("qrscanner2"); 
+      element.className = "ion-page-hidden";
       this.router.navigate(['/game'])
   }
 

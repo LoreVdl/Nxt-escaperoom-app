@@ -15,6 +15,8 @@ export class EndPartOneScreenComponent implements OnInit {
   ngOnInit() {
     let router = this.router; 
     this.intervalVar = setTimeout(function() {
+      let element = document.getElementById("endPartOne"); 
+      element.className = "ion-page-hidden";
       router.navigate(['/victory-1']); 
     }, 5000); 
   }

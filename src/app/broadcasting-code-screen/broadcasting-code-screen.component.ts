@@ -14,6 +14,8 @@ export class BroadcastingCodeScreenComponent implements OnInit {
   ngOnInit() {
     let router = this.router; 
     this.intervalVar = setTimeout(function() {
+      let element = document.getElementById("broadCode"); 
+      element.className = "ion-page-hidden";
       router.navigate(['/code-1']); 
     }, 5000); 
   }

@@ -98,6 +98,8 @@ export class GameComponent implements OnInit {
   }
 
   verifyCode() {
+    let element = document.getElementById("game"); 
+    element.className = "ion-page-hidden";
     this.router.navigate(['qrcode-3']); 
   }
 

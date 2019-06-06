@@ -46,6 +46,8 @@ export class CodeScreenOneComponent implements OnInit {
         this.form.value["code_number_4"] == this.code_number_4 &&
         this.form.value["code_number_5"] == this.code_number_5 && 
         this.form.value["code_number_6"] == this.code_number_6) {
+      let element = document.getElementById("code-screen-one"); 
+      element.className = "ion-page-hidden"; 
       this.router.navigate(['/end-part-1']); 
     }
 
