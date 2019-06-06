@@ -1,18 +1,29 @@
 @import "../../lettertype.scss"; 
 
+app-broadcasting-code-screen {
+    text-align: center;
+}
 .broadCode {
     text-align: center;
-    margin-top: 20px; 
+    vertical-align: middle;
+    min-height: 293.578px;
+    position: relative;
 
     ion-icon {
-        width: 200px; 
-        height: 200px;
+        width: 160px; 
+        height: 160px;
+        position: absolute; 
+        top: 50%;          
+        left: 50%;               
+        transform: translate(-50%, -50%);    
     }
+}
 
-    p {
-        font-size: 50px; 
-        color: #fff; 
-        margin-top: 50px; 
-        font-family: "futrfw"; 
-    }
+p {
+    text-align: center;
+    font-size: 50px; 
+    color: #fff; 
+    font-family: "futrfw"; 
+    margin-top: 70px;
+    margin-bottom: 90px; 
 }

@@ -3,9 +3,11 @@
     <p *ngIf = "scannedCode === code">{{ code }}</p>
 </div>
 
-<div *ngIf = "scannedCode === code" class = "key">
-    <ion-icon src = "assets/icon/key.svg" (click) = "navigate()"></ion-icon>
-</div>
+<div class = "submitButton" *ngIf = "scannedCode === code">
+    <ion-item>
+      <img src = "assets/icon/key.png" (click) = "navigate()"/>
+    </ion-item>
+  </div>
 
 <ion-fab vertical = "bottom" horizontal = "end" slot = "fixed">
     <ion-fab-button>

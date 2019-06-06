@@ -11,7 +11,7 @@ import { TipsComponent } from '../tips/tips.component';
   styleUrls: ['./words-page.component.scss'],
 })
 export class WordsPageComponent implements OnInit {
-  private words: string[] = ["Bal", "aap", "fiets", "test"]; 
+  private words: string[] = ["Bal", "aap", "aap", "fiets", "test"]; 
   private word = "bal"; 
   public intervalVar; 
   public intervalVar2; 
@@ -27,15 +27,22 @@ export class WordsPageComponent implements OnInit {
   ngOnInit() {
     this.setForm(); 
     this.intervalVar = setInterval(function() {
-      this.word = this.words[this.startWordPosition]; 
       var element = document.getElementById("word") as HTMLElement; 
-      element.textContent = this.word;
-      if (this.startWordPosition === ((this.words.length)-1)) {
-        this.startWordPosition = 0; 
-      }
-      else {
-        this.startWordPosition++; 
-      }
+      this.intervalVar3 = setTimeout(() => {
+        this.word = this.words[this.startWordPosition]; 
+        element.textContent = this.word;
+        if (this.startWordPosition === ((this.words.length)-1)) {
+          this.startWordPosition = 0; 
+        }
+        else {
+          this.startWordPosition++; 
+        }
+      }, 400);
+      
+      this.intervalVar2 = setTimeout(() => {
+        this.word = ""; 
+        element.textContent = this.word;
+      }, 100); 
     }.bind(this), 500)
   }
 
@@ -50,8 +57,6 @@ export class WordsPageComponent implements OnInit {
       this.router.navigate(['broadcasting-code']); 
     }
     else {
-      let element = document.getElementsByTagName("ion-item")[0] as HTMLElement;
-      element.style.borderColor = "#E90000";  
       document.getElementById("pianoImage").setAttribute("src", "assets/icon/pianored.png"); 
       this.countdownService.loseTime(); 
     }

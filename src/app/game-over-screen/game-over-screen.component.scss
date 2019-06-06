@@ -2,17 +2,19 @@
 
 .gameOver {
     text-align: center;
-    margin-top: 20px; 
+    margin-top: 50px; 
 
     ion-icon {
-        width: 200px; 
-        height: 200px;
+        width: 150px; 
+        height: 150px;
+        margin-bottom: 60px; 
     }
 
     p {
-        font-size: 50px; 
-        color: #fff; 
-        margin-top: 50px; 
+        font-size: 45px; 
+        color: #fff;
         font-family: "futrfw"; 
+        margin-top: 5px;
+        margin-bottom: 0;
     }
 }

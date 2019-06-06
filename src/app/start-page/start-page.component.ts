@@ -8,6 +8,7 @@ import { CountdownService } from 'src/app/services/countdown.service';
   styleUrls: ['./start-page.component.scss'],
 })
 export class StartPageComponent implements OnInit {
+  public intervalVar; 
 
   constructor(private countdownService: CountdownService, public router: Router) {}
 
@@ -16,5 +17,13 @@ export class StartPageComponent implements OnInit {
   startTimer() {
     this.countdownService.startTimer(); 
     this.router.navigate(['/words']);
+  }
+
+  startAnimation() {
+    let element = document.getElementsByTagName('img')[1]; 
+    element.src = "../../assets/images/start.gif"; 
+    this.intervalVar = setTimeout(function() {
+      this.startTimer(); 
+    }.bind(this), 800);
   }
 }

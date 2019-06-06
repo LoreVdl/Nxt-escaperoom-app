@@ -1,32 +1,29 @@
 @import "../../lettertype.scss"; 
 
 .qrscanner {
-    height: 200px;
+    min-height: 263.578px;
+    margin-top: 30px;
+    position: relative;
 
     img {
-        width: 200px; 
-        height: 200px;
-        position: absolute; 
-        left: 23%;
+        height: 263.578px;
+        position: absolute;               
+        left: 50%;                         
+        transform: translate(-50%, 0);
     }
 
     p {
         position: absolute; 
         color: #fff; 
         font-family: "futrfw"; 
-        font-size: 27px; 
-        width: 55px;
-        left: 43%;
-        top: 10%; 
+        font-size: 40px; 
+        width: 80px;
+        left: 50%;                         
+        transform: translate(-50%, 0);
+        top: 19%; 
     }
 }
 
-.key {
-    text-align: center;
-    margin-bottom: 10%; 
-    
-    ion-icon {
-        width: 100px;
-        height: 100px;
-    }
+.submitButton {
+    margin-bottom: 100px; 
 }

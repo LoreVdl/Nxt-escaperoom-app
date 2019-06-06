@@ -17,5 +17,11 @@ export class HeaderComponent implements OnInit {
   ngDoCheck() {
     this.time = this.countdownService.showTimer()[0];
     this.startGame = this.countdownService.showTimer()[1];
+   // this.startGame = true;
+
+    if(this.startGame) {
+      let element = document.getElementsByTagName('p')[0]; 
+      element.style.marginTop = "0"; 
+    }
   }
 }

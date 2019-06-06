@@ -2,53 +2,11 @@
 
 .startButton {
     text-align: center;
-    margin-top: 50%; 
+    margin-top: 30%; 
     position: relative;
 
     img {
-        width: 100px; 
-        position: absolute;
+        width: 100%; 
         z-index: 0;
-        top: -75%; 
-        left: 20%;
-        animation: moveRight 1.5s; 
-        animation-delay: 2s; 
-        animation-timing-function: linear;
-        animation-fill-mode: forwards;  
     }
-
-    a {
-        position: relative;
-        background-color: #000; 
-        color: #fff; 
-        font-size: 40px; 
-        text-decoration: none;
-        font-family: "futrfw";
-        z-index: 1;
-        box-shadow: 7px 7px 5px 0 rgba(0, 0, 0, 0.8), -7px -7px 5px 0 rgba(0, 0, 0, 0.8);
-    }
-
-    .lettersDisapear {
-        background-color: #000; 
-        position: absolute;
-        color: #000; 
-        font-size: 40px; 
-        font-family: "futrfw";
-        z-index: 2;
-        left: -28.5%;
-        animation: lettersDisapear 1.5s; 
-        animation-delay: 2s; 
-        animation-timing-function: linear;
-        animation-fill-mode: forwards; 
-    }
-}
-
-@keyframes moveRight {
-    0% {left: 20%;}
-    100% {left: 75%;}
-}
-
-@keyframes lettersDisapear {
-    0% {left: -28.5%;}
-    100% {left: 26%;}
 }
