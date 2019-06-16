@@ -13,12 +13,17 @@ import { GameComponent } from './game/game.component';
 import { QrCodeThreeComponent } from './qr-code-three/qr-code-three.component';
 import { QrCodeFourComponent } from './qr-code-four/qr-code-four.component';
 import { BroadcastingCodeScreenComponent } from './broadcasting-code-screen/broadcasting-code-screen.component';
+import { WordsPageTwoComponent } from './words-page-two/words-page-two.component';
+import { QrCodeFiveComponent } from './qr-code-five/qr-code-five.component';
+import { QrScannerComponent } from './qr-scanner/qr-scanner.component';
 
 const routes: Routes = [
   { path: '', component: StartPageComponent },
   { path: 'words', component: WordsPageComponent },
+  { path: 'words2', component: WordsPageTwoComponent },
   { path: 'code-1', component: CodeScreenOneComponent },
   { path: 'qrcode-1', component: QRCodeOneComponent },
+  { path: 'qr-scanner', component: QrScannerComponent },
   { path: 'victory-2', component: VicoryScreenTwoComponent },
   { path: 'game-over', component: GameOverScreenComponent },
   { path: 'end-part-1', component: EndPartOneScreenComponent },
@@ -27,7 +32,9 @@ const routes: Routes = [
   { path: 'game', component: GameComponent },
   { path: 'qrcode-3', component: QrCodeThreeComponent },
   { path: 'qrcode-4', component: QrCodeFourComponent }, 
-  { path: 'broadcasting-code', component: BroadcastingCodeScreenComponent }
+  { path: 'qrcode-5', component: QrCodeFiveComponent }, 
+  { path: 'broadcasting-code', component: BroadcastingCodeScreenComponent },
+
 ];
 
 @NgModule({

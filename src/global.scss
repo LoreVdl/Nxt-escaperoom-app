@@ -23,11 +23,11 @@ ion-header {
 }
 
 .sc-ion-popover-ios-h {
-    --width: 600px; 
+    --width: 100vw; 
 }
 
 .sc-ion-popover-md {
-    --width: 600px; 
+    --width: 100vw; 
 }
 
 ion-fab {
@@ -71,3 +71,7 @@ ion-fab {
         }
     }
 }
+
+.custom-popover .popover-content {
+    left: 0px !important;
+  }

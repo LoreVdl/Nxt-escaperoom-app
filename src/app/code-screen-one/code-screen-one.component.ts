@@ -11,12 +11,12 @@ import { TipsComponent } from '../tips/tips.component';
   styleUrls: ['./code-screen-one.component.scss'],
 })
 export class CodeScreenOneComponent implements OnInit {
-  private code_number_1: number = 1; 
-  private code_number_2: number = 1; 
-  private code_number_3: number = 1; 
+  private code_number_1: number = 3; 
+  private code_number_2: number = 4; 
+  private code_number_3: number = 2; 
   private code_number_4: number = 1; 
-  private code_number_5: number = 1; 
-  private code_number_6: number = 1; 
+  private code_number_5: number = 3; 
+  private code_number_6: number = 9; 
 
   private form: FormGroup; 
 
@@ -56,24 +56,24 @@ export class CodeScreenOneComponent implements OnInit {
         this.form.value["code_number_2"] == this.code_number_2) {
           document.getElementById("devRoom").setAttribute("src", "assets/icon/devg.svg"); 
       }
-      if (this.form.value["code_number_3"] == this.code_number_1 && 
-        this.form.value["code_number_3"] == this.code_number_2) {
+      if (this.form.value["code_number_3"] == this.code_number_3 && 
+        this.form.value["code_number_4"] == this.code_number_4) {
           document.getElementById("broadRoom").setAttribute("src", "assets/icon/brog.svg"); 
       }
-      if (this.form.value["code_number_5"] == this.code_number_1 && 
-        this.form.value["code_number_6"] == this.code_number_2) {
+      if (this.form.value["code_number_5"] == this.code_number_5 && 
+        this.form.value["code_number_6"] == this.code_number_6) {
           document.getElementById("creaRoom").setAttribute("src", "assets/icon/creg.svg"); 
       }
       if (this.form.value["code_number_1"] != this.code_number_1 ||
         this.form.value["code_number_2"] != this.code_number_2) {
           document.getElementById("devRoom").setAttribute("src", "assets/icon/devr.svg"); 
       }
-      if (this.form.value["code_number_3"] != this.code_number_1 ||
-        this.form.value["code_number_4"] != this.code_number_2) {
+      if (this.form.value["code_number_3"] != this.code_number_3 ||
+        this.form.value["code_number_4"] != this.code_number_4) {
           document.getElementById("broadRoom").setAttribute("src", "assets/icon/bror.svg"); 
       }
-      if (this.form.value["code_number_5"] != this.code_number_1 ||
-        this.form.value["code_number_6"] != this.code_number_2) {
+      if (this.form.value["code_number_5"] != this.code_number_5 ||
+        this.form.value["code_number_6"] != this.code_number_6) {
           document.getElementById("creaRoom").setAttribute("src", "assets/icon/crer.svg"); 
       }
       this.countdownService.loseTime(); 
@@ -89,7 +89,8 @@ export class CodeScreenOneComponent implements OnInit {
       event: ev, 
       animated: true, 
       translucent: true, 
-      componentProps: {page: "code-one", room: room}
+      componentProps: {page: "code-one", room: room}, 
+      cssClass: "custom-popover"
     }); 
 
     return await popover.present();

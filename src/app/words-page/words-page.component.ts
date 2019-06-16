@@ -11,7 +11,7 @@ import { TipsComponent } from '../tips/tips.component';
   styleUrls: ['./words-page.component.scss'],
 })
 export class WordsPageComponent implements OnInit {
-  private words: string[] = ["Bal", "aap", "aap", "fiets", "test"]; 
+  private words: string[] = ["Dino", "dino", "foto", "dino", "hand", "mp3", "dino", "dino", "foto", "dino", "eend", "hand", "glas", "glas", "smurf", "hand", "eend", "hand"]; 
   private word = "bal"; 
   public intervalVar; 
   public intervalVar2; 
@@ -19,7 +19,6 @@ export class WordsPageComponent implements OnInit {
   public startWordPosition = 0; 
   public fullWidth = 400; 
   public fullHeight = 400; 
-  private song = "broeder jacob"; 
   private form: FormGroup; 
 
   constructor(private formBuilder: FormBuilder, public router: Router, private countdownService: CountdownService, public popoverController: PopoverController) { }
@@ -54,14 +53,13 @@ export class WordsPageComponent implements OnInit {
   }
 
   verifySong() {
-    if (this.form.value["song"].toLowerCase() === this.song) {
+    if (this.form.value["song"].toLowerCase() === "verjaardag" || this.form.value["song"].toLowerCase() === "birthday") {
       let element = document.getElementById("words"); 
       element.className = "ion-page-hidden"; 
-      this.router.navigate(['broadcasting-code']); 
+      this.router.navigate(['words2']); 
     }
     else {
       document.getElementById("pianoImage").setAttribute("src", "assets/icon/pianored.png"); 
-      this.countdownService.loseTime(); 
     }
   }
 
@@ -74,7 +72,8 @@ export class WordsPageComponent implements OnInit {
       event: ev, 
       animated: true, 
       translucent: true, 
-      componentProps: {page: "words", room: room} 
+      componentProps: {page: "words", room: room}, 
+      cssClass: "custom-popover"
     }); 
 
     return await popover.present();

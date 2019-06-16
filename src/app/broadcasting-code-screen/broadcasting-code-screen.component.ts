@@ -17,7 +17,7 @@ export class BroadcastingCodeScreenComponent implements OnInit {
       let element = document.getElementById("broadCode"); 
       element.className = "ion-page-hidden";
       router.navigate(['/code-1']); 
-    }, 5000); 
+    }, 10000); 
   }
 
 }

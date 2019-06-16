@@ -33,6 +33,9 @@ import { QrCodeThreeComponent } from './qr-code-three/qr-code-three.component';
 import { QrCodeFourComponent } from './qr-code-four/qr-code-four.component';
 import { BroadcastingCodeScreenComponent } from './broadcasting-code-screen/broadcasting-code-screen.component';
 import { TipsComponent } from './tips/tips.component';
+import { WordsPageTwoComponent } from './words-page-two/words-page-two.component';
+import { QrCodeFiveComponent } from './qr-code-five/qr-code-five.component';
+import { QrScannerComponent } from './qr-scanner/qr-scanner.component';
 
 firebase.initializeApp(environment.firebase); 
 
@@ -52,7 +55,10 @@ firebase.initializeApp(environment.firebase);
     QrCodeThreeComponent, 
     QrCodeFourComponent, 
     BroadcastingCodeScreenComponent, 
-    TipsComponent
+    TipsComponent, 
+    WordsPageTwoComponent, 
+    QrCodeFiveComponent, 
+    QrScannerComponent
   ],
   entryComponents: [
     TipsComponent

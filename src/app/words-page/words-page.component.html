@@ -1,6 +1,6 @@
 <div id = "words">
     <p id = "word"></p>
-    <form *ngIf = "form"[formGroup] = "form" (ngSubmit) = "verifySong()">
+    <form *ngIf = "form"[formGroup] = "form">
         <div class = "piano">
             <ion-item>
                 <ion-input type = "text" formControlName = "song" maxLength = "15"></ion-input>

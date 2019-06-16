@@ -1,0 +1,51 @@
+@import "../../lettertype.scss"; 
+
+#words2 {
+    height: 100vh;
+    text-align: center; 
+    vertical-align: middle; 
+    margin-top: 0; 
+}
+
+#word2 {
+    border-bottom: 3px solid #fff; 
+    border-top: 3px solid #fff; 
+    padding: 15px 0 15px 0; 
+    width: 280px;
+    height: 86px; 
+    display: inline-block;
+    font-size: 39px; 
+    margin: 30px 0 0 0; 
+    color: #fff; 
+    font-family: "futrfw";
+}
+
+button {
+    display: block;
+}
+
+.piano {
+    display: inline-block;
+    text-align: center;
+    margin: 70px 0 0 0; 
+
+    img {
+        margin-top: -2px; 
+        width: 65%; 
+    }
+
+    ion-item {
+        --background: #000; 
+        --inner-border-width: 0px;
+        border: 3px solid #fff;  
+        width: 320px; 
+        display: inline-block;
+        
+        ion-input {
+            color: #fff; 
+            font-family: "futrfw"; 
+            height: 40px;
+            font-size: 20px; 
+        }
+    }
+}

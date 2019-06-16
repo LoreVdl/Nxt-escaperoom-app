@@ -15,7 +15,7 @@ export class QrCodeThreeComponent implements OnInit {
   qrData = null; 
   createdCode = null; 
   scannedCode = null; 
-  private code = "ABCDE"; 
+  private code = "103"; 
 
   constructor(public popoverController: PopoverController, public router: Router, private countdownService: CountdownService, private barcodeScanner: BarcodeScanner) { }
 
@@ -30,12 +30,15 @@ export class QrCodeThreeComponent implements OnInit {
   scanCode() {
     this.barcodeScanner.scan().then(barcodeData => {
       this.scannedCode = barcodeData.text;
+      if (this.code != this.scannedCode) {
+        this.countdownService.loseTime(); 
+      }
     })
   }
 
   checkCode() {
     if (this.code === this.scannedCode) {
-      document.getElementById("bug3").setAttribute("src", "assets/icon/bugGreen.svg"); 
+      document.getElementById("bug3").setAttribute("src", "assets/icon/bugGr.svg"); 
     }
     else {
       document.getElementById("bug3").setAttribute("src", "assets/icon/bugr.svg"); 
@@ -47,20 +50,4 @@ export class QrCodeThreeComponent implements OnInit {
     element.className = "ion-page-hidden";
     this.router.navigate(['qrcode-4'])
   }
-
-  async openTip(event, ev: any) {
-    let room = event.target.id; 
-    this.countdownService.loseTime(); 
-
-    const popover = await this.popoverController.create({
-      component: TipsComponent, 
-      event: ev, 
-      animated: true, 
-      translucent: true, 
-      componentProps: {page: "qr-code-three", room: room}
-    }); 
-
-    return await popover.present();
-  }
-
 }

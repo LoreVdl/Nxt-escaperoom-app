@@ -1,0 +1,33 @@
+<div id = "words2">
+    <p id = "word2"></p>
+    <form *ngIf = "form"[formGroup] = "form">
+        <div class = "piano">
+            <ion-item>
+                <ion-input type = "text" formControlName = "song" maxLength = "15"></ion-input>
+            </ion-item>
+            <img id = "pianoImage" src = "assets/icon/piano.png" />
+        </div>
+    
+        <div class = "submitButton">
+            <ion-item>
+                <img src = "assets/icon/key.png" (click) = "verifySong()"/>
+            </ion-item>
+        </div>
+    </form>
+    <ion-fab vertical = "bottom" horizontal = "end" slot = "fixed" class = "tipButton">
+        <ion-fab-button>
+            <ion-icon src = "assets/icon/lamp.svg"></ion-icon>
+        </ion-fab-button>
+        <ion-fab-list side = "start">
+            <ion-fab-button (click) = "openTip($event)">
+                <ion-icon id = "Development" src = "assets/icon/devroom.svg"></ion-icon>
+            </ion-fab-button>
+            <ion-fab-button (click) = "openTip($event)">
+                <ion-icon id = "Broadcast" src = "assets/icon/broadroom.svg"></ion-icon>
+            </ion-fab-button>
+            <ion-fab-button (click) = "openTip($event)">
+                <ion-icon id = "Creative" src = "assets/icon/crearoom.svg"></ion-icon>
+            </ion-fab-button>
+        </ion-fab-list>
+    </ion-fab>
+</div>

@@ -13,10 +13,10 @@ export class GameComponent implements OnInit {
   private button1; 
   private icon1; 
   private answer1 = "option1"; 
-  private answer2 = "option2"; 
-  private answer3 = "option1"; 
-  private answer4 = "option2";
-  private answer5 = "option1";
+  private answer2 = "option1"; 
+  private answer3 = "option2"; 
+  private answer4 = "option1";
+  private answer5 = "option2";
   private count = 1; 
   private correctAnswers = 0;
   private correctAnswer; 
@@ -39,32 +39,32 @@ export class GameComponent implements OnInit {
     let answer = event.target.id; 
 
     if (this.count === 1) {
-      document.getElementById("icon1").setAttribute("name", "logo-facebook"); 
-      document.getElementById("icon2").setAttribute("name", "logo-twitter"); 
+      document.getElementById("icon1").setAttribute("src", "assets/icon/h.svg"); 
+      document.getElementById("icon2").setAttribute("src", "assets/icon/t.svg"); 
       this.correctAnswer = this.answer1; 
     } 
 
     else if (this.count === 2) {
-      document.getElementById("icon1").setAttribute("name", "arrow-round-back"); 
-      document.getElementById("icon2").setAttribute("name", "arrow-round-down"); 
+      document.getElementById("icon1").setAttribute("src", "assets/icon/dino.svg"); 
+      document.getElementById("icon2").setAttribute("src", "assets/icon/olaf.svg");  
       this.correctAnswer = this.answer2; 
     } 
 
     else if (this.count === 3) {
-      document.getElementById("icon1").setAttribute("name", "heart"); 
-      document.getElementById("icon2").setAttribute("name", "heart-dislike"); 
+      document.getElementById("icon1").setAttribute("src", "assets/icon/apple.svg"); 
+      document.getElementById("icon2").setAttribute("src", "assets/icon/windows.svg"); 
       this.correctAnswer = this.answer3; 
     } 
 
     else if (this.count === 4) {
-      document.getElementById("icon1").setAttribute("name", "male"); 
-      document.getElementById("icon2").setAttribute("name", "female"); 
+      document.getElementById("icon1").setAttribute("src", "assets/icon/e.svg"); 
+      document.getElementById("icon2").setAttribute("src", "assets/icon/s.svg"); 
       this.correctAnswer = this.answer4; 
     } 
 
-    else if (this.count === 5) {
-      document.getElementById("icon1").setAttribute("name", "close"); 
-      document.getElementById("icon2").setAttribute("name", "checkmark"); 
+    else if (this.count === 5 && this.correctAnswers < 5) {
+      document.getElementById("icon1").setAttribute("src", "assets/icon/pollock.svg"); 
+      document.getElementById("icon2").setAttribute("src", "assets/icon/feet.svg"); 
       this.correctAnswer = this.answer5; 
     } 
 
@@ -103,8 +103,7 @@ export class GameComponent implements OnInit {
     this.router.navigate(['qrcode-3']); 
   }
 
-  async openTip(event, ev: any) {
-    let room = event.target.id; 
+  async openTip(ev: any) {
     this.countdownService.loseTime(); 
 
     const popover = await this.popoverController.create({
@@ -112,7 +111,8 @@ export class GameComponent implements OnInit {
       event: ev, 
       animated: true, 
       translucent: true, 
-      componentProps: {page: "game", room: room}
+      componentProps: {page: "game"}, 
+      cssClass: "custom-popover"
     }); 
 
     return await popover.present();

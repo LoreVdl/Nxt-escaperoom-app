@@ -14,11 +14,12 @@ export class QRCodeOneComponent implements OnInit {
   qrData = null; 
   createdCode = null; 
   scannedCode = null; 
-  private code = "ABCDEF"; 
+  private code = "872"; 
 
   constructor(public popoverController: PopoverController, public router: Router, private countdownService: CountdownService, private barcodeScanner: BarcodeScanner) { }
 
   ngOnInit() {
+    this.countdownService.startTimer2(); 
     this.countdownService.startTimer(); 
   }
 
@@ -31,12 +32,15 @@ export class QRCodeOneComponent implements OnInit {
   scanCode() {
     this.barcodeScanner.scan().then(barcodeData => {
       this.scannedCode = barcodeData.text;
-    })
+      if (this.code != this.scannedCode) {
+        this.countdownService.loseTime(); 
+      }
+    }); 
   }
 
   checkCode() {
     if (this.code === this.scannedCode) {
-      document.getElementById("bug").setAttribute("src", "assets/icon/bugGreen.svg"); 
+      document.getElementById("bug").setAttribute("src", "assets/icon/bugGr.svg"); 
     }
     else {
       document.getElementById("bug").setAttribute("src", "assets/icon/bugr.svg"); 
@@ -48,20 +52,4 @@ export class QRCodeOneComponent implements OnInit {
     element.className = "ion-page-hidden";
     this.router.navigate(['/qrcode-2'])
   }
-
-  async openTip(event, ev: any) {
-    let room = event.target.id; 
-    this.countdownService.loseTime(); 
-
-    const popover = await this.popoverController.create({
-      component: TipsComponent, 
-      event: ev, 
-      animated: true, 
-      translucent: true, 
-      componentProps: {page: "qr-code-one", room: room}
-    }); 
-
-    return await popover.present();
-  }
-
 }
