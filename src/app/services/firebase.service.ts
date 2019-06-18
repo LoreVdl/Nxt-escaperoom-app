@@ -1,18 +1,21 @@
 import { Injectable } from '@angular/core';
 import * as firebase from 'firebase';
 import { CountdownService } from './countdown.service';
+import { AngularFirestore } from '@angular/fire/firestore';
 
 @Injectable({
   providedIn: 'root'
 })
 export class FirebaseService {
 
-  constructor(private countdownService: CountdownService) { }
+  constructor(private countdownService: CountdownService, private database: AngularFirestore) { }
 
   uploadImage(image) {
     let time = this.countdownService.time; 
     let randomString = this.makeRandomString(10); 
     let imageName = time + '-' + randomString; 
+
+    this.uploadName(imageName); 
 
     return new Promise<any>((resolve, reject) => {
       let storageRef = firebase.storage().ref(); 
@@ -23,7 +26,7 @@ export class FirebaseService {
       }, err => {
         reject(err);
       })
-    })
+    }); 
   }
 
   makeRandomString(length) {
@@ -34,5 +37,11 @@ export class FirebaseService {
        result += characters.charAt(Math.floor(Math.random() * charactersLength));
     }
     return result;
+  }
+
+  uploadName(name) {
+    this.database.collection("images").add({
+      name: name
+    });
   }
 }
